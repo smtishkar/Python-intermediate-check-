@@ -1,4 +1,5 @@
 import uuid
+import datetime
 
 def choose_action():
     print (f"Выберите действие: \nСоздать заметку - 1\nСписок заметок - 2\n"
@@ -8,12 +9,12 @@ def choose_action():
 
 
 def create():
-    id
-    title
-    topic
-    date
-    
-    pass
+    id = str(uuid.uuid4()).split('-')[0]
+    title = input ("Введите название заметки: ")
+    topic = input ("Введите заметку: ")
+    date = datetime.datetime.today().strftime("%d.%m.%Y %H:%M:%S")
+    # return (id,title,topic,date)
+    return f'{id} | {title} | {topic} | {date}'
 
 def see_all():
     pass
