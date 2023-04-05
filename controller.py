@@ -8,6 +8,8 @@ def run():
         # ui.create()
         # print(ui.create())
         logger.create_note()
+    if user_request == 2:
+        logger.create_note_second()
 
 
 
