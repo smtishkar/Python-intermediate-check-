@@ -55,3 +55,15 @@ def show_all():
         new_data = json.load(f)
         for i in new_data:
             print (i)
+
+def find_note(id):
+    with open (filename, 'r', encoding='utf8') as f:
+        new_data = json.load(f)
+        for i in new_data:
+            for key, value in i.items():
+                # print(key, ':', value)
+                if value == id:
+                    print (i)
+            # print ('да')
+            # if i[0] == id:
+            #     print (i) 

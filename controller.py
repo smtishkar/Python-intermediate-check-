@@ -12,3 +12,6 @@ def run():
            logger.create_note_second() 
     if user_request == 2:
         logger.show_all()
+    if user_request == 3:
+        id = ui.find_note()
+        logger.find_note(id)
