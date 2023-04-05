@@ -9,7 +9,7 @@ def run():
         if path.isfile(logger.filename) is False:
             logger.create_note()
         else: 
-           logger.create_note_second() 
+            logger.create_note_second() 
     if user_request == 2:
         logger.show_all()
     if user_request == 3:
@@ -17,7 +17,9 @@ def run():
         logger.find_note(id)
     if user_request ==4:
         id=ui.find_note()
-        logger.correct_not(id)
+        topic=ui.topic_correction()
+        date = ui.time_correction()
+        logger.correct_not(id,topic,date)
     if user_request ==5:
         id = ui.find_note()
         logger.find_and_delete(id)

@@ -51,13 +51,13 @@ def create_note_second():
         json.dump(new_data, f, ensure_ascii=False, indent=2)
 
 def show_all():
-    with open (filename, 'r', encoding='utf8') as f:
+    with open (filename, 'r', encoding='utf-8') as f:
         new_data = json.load(f)
         for i in new_data:
             print (i)
 
 def find_note(id):
-    with open (filename, 'r', encoding='utf8') as f:
+    with open (filename, 'r', encoding='utf-8') as f:
         new_data = json.load(f)
         for i in new_data:
             for key, value in i.items():
@@ -66,17 +66,7 @@ def find_note(id):
 
 
 def find_and_delete(id):
-    # with open (filename, 'r', encoding='utf8') as f:
-    #     new_data = json.load(f)
-    #     for i in range(len(new_data)):      
-    #         for key, value in new_data[i].items():
-    #             if value == id:
-    #                 print('z dfdf')
-    #                 index = new_data[i]
-    #                 print(index)
-    # print(type(new_data))
-
-    with open (filename, 'r', encoding='utf8') as f:
+    with open (filename, 'r', encoding='utf-8') as f:
         new_data = json.load(f)
         for i in range(len(new_data)):
             if new_data[i]['id'] == id:
@@ -86,13 +76,14 @@ def find_and_delete(id):
     with open (filename, 'w', encoding = 'utf-8') as f:
         json.dump(new_data, f, ensure_ascii=False, indent=2)
 
-def correct_not(id):
-    with open (filename, 'r', encoding='utf8') as f:
+def correct_not(id,new_topic,date):
+    with open (filename, 'r', encoding='utf-8') as f:
         new_data = json.load(f)
         for i in range(len(new_data)):
             if new_data[i]['id'] == id:
-                new_topic = input ("Введите новый текст: ")
+                # new_topic = input ("Введите новый текст: ")
                 new_data[i]["topic"] = new_topic
+                new_data[i]["date"] = date
                 break
        
     with open (filename, 'w', encoding = 'utf-8') as f:
