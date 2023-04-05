@@ -24,4 +24,24 @@ import os
 #     json.dump (listobj, write_file, ensure_ascii=False, indent=2)
 
 
-print(os.path.abspath("data.json"))
+# print(os.path.abspath("data.json"))
+
+
+list = ['4', '2', '3']
+
+numb = '4'
+
+# def delete(number):
+
+
+
+for i in range (len(list)):
+    print (i)
+    if list[i] == numb:
+        index = i
+        print(list[i])
+list.pop(index)
+print(list)
+
+
+

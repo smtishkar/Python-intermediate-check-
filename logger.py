@@ -61,9 +61,39 @@ def find_note(id):
         new_data = json.load(f)
         for i in new_data:
             for key, value in i.items():
-                # print(key, ':', value)
                 if value == id:
                     print (i)
-            # print ('да')
-            # if i[0] == id:
-            #     print (i) 
+
+
+def find_and_delete(id):
+    # with open (filename, 'r', encoding='utf8') as f:
+    #     new_data = json.load(f)
+    #     for i in range(len(new_data)):      
+    #         for key, value in new_data[i].items():
+    #             if value == id:
+    #                 print('z dfdf')
+    #                 index = new_data[i]
+    #                 print(index)
+    # print(type(new_data))
+
+    with open (filename, 'r', encoding='utf8') as f:
+        new_data = json.load(f)
+        for i in range(len(new_data)):
+            if new_data[i]['id'] == id:
+                del new_data[i]
+                break
+       
+    with open (filename, 'w', encoding = 'utf-8') as f:
+        json.dump(new_data, f, ensure_ascii=False, indent=2)
+
+def correct_not(id):
+    with open (filename, 'r', encoding='utf8') as f:
+        new_data = json.load(f)
+        for i in range(len(new_data)):
+            if new_data[i]['id'] == id:
+                new_topic = input ("Введите новый текст: ")
+                new_data[i]["topic"] = new_topic
+                break
+       
+    with open (filename, 'w', encoding = 'utf-8') as f:
+        json.dump(new_data, f, ensure_ascii=False, indent=2)

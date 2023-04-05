@@ -15,3 +15,10 @@ def run():
     if user_request == 3:
         id = ui.find_note()
         logger.find_note(id)
+    if user_request ==4:
+        id=ui.find_note()
+        logger.correct_not(id)
+    if user_request ==5:
+        id = ui.find_note()
+        logger.find_and_delete(id)
+    
