@@ -49,3 +49,9 @@ def create_note_second():
     
     with open (filename, 'w', encoding = 'utf-8') as f:
         json.dump(new_data, f, ensure_ascii=False, indent=2)
+
+def show_all():
+    with open (filename, 'r', encoding='utf8') as f:
+        new_data = json.load(f)
+        for i in new_data:
+            print (i)
