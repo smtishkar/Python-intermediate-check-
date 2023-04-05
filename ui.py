@@ -9,7 +9,7 @@ def choose_action():
         request = input("Введите значение: ")
         try:
             request = int(request)
-            if request <5 and request > 0:
+            if request <=5 and request > 0:
                 valid = True
             else:
                 print("Не корректный ввод, повторите попытку")
